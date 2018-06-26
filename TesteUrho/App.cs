@@ -28,7 +28,7 @@ namespace FormsSample
 	public class UrhoPage : ContentPage 
 	{
 		UrhoSurface urhoSurface;
-		Charts urhoApp;
+		HelloWorld urhoApp;
 		Slider selectedBarSlider;
 
 		public UrhoPage()
@@ -40,7 +40,7 @@ namespace FormsSample
 			urhoSurface.VerticalOptions = LayoutOptions.FillAndExpand;
 
 			Slider rotationSlider = new Slider(0, 500, 250);
-			rotationSlider.ValueChanged += (s, e) => urhoApp?.Rotate((float)(e.NewValue - e.OldValue));
+			//rotationSlider.ValueChanged += (s, e) => urhoApp?.Rotate((float)(e.NewValue - e.OldValue));
 
 			selectedBarSlider = new Slider(0, 5, 2.5);
 			selectedBarSlider.ValueChanged += OnValuesSliderValueChanged;
@@ -68,8 +68,8 @@ namespace FormsSample
 
 		void OnValuesSliderValueChanged(object sender, ValueChangedEventArgs e)
 		{
-			if (urhoApp?.SelectedBar != null)
-				urhoApp.SelectedBar.Value = (float)e.NewValue;
+			//if (urhoApp?.SelectedBar != null)
+			//	urhoApp.SelectedBar.Value = (float)e.NewValue;
 		}
 
 		private void OnBarSelection(Bar bar)
@@ -87,7 +87,8 @@ namespace FormsSample
 
 		async void StartUrhoApp()
 		{
-			urhoApp = await urhoSurface.Show<Charts>(new ApplicationOptions(assetsFolder: null) { Orientation = ApplicationOptions.OrientationType.LandscapeAndPortrait });
+            //urhoApp = await urhoSurface.Show<Charts>(new ApplicationOptions(assetsFolder: null) { Orientation = ApplicationOptions.OrientationType.LandscapeAndPortrait });
+            urhoApp = await urhoSurface.Show<HelloWorld>(new ApplicationOptions(assetsFolder: "Data"));
 		}
 	}
 }
