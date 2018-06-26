@@ -154,9 +154,9 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FormsSample\TesteUrhoSharp.csproj">
+    <ProjectReference Include="..\TesteUrho\TesteUrhoSharp.csproj">
+      <Project>{8dd49470-0958-42d9-841f-f15589dc9f99}</Project>
       <Name>TesteUrhoSharp</Name>
-      <Project>{8DD49470-0958-42D9-841F-F15589DC9F99}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
